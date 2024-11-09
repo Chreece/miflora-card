@@ -11,7 +11,8 @@ class MifloraCard extends HTMLElement {
             temperature: 'hass:thermometer',
             intensity: 'hass:white-balance-sunny',
             conductivity: 'hass:emoticon-poop',
-            battery: 'hass:battery'
+            battery: 'hass:battery',
+            signal: 'hass:signal-cellular'
         };
 
     }
@@ -23,6 +24,15 @@ class MifloraCard extends HTMLElement {
                 return `${icon}-alert`;
             } else if (state < 95) {
                 return `${icon}-${Math.round((state / 10) - 0.01) * 10}`;
+            }
+        }
+        if (sensor === 'signal') {
+            if (state >= -50) {
+                return `${icon}-3`;
+            } else if (state >= -70) {
+                return `${icon}-2`;
+            } else {
+                return `${icon}-1`;
             }
         }
         return icon;
