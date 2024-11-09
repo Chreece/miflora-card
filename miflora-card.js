@@ -12,7 +12,7 @@ class MifloraCard extends HTMLElement {
             intensity: 'hass:white-balance-sunny',
             conductivity: 'hass:emoticon-poop',
             battery: 'hass:battery',
-            signal: 'hass:signal'
+            signal: 'mdi:signal'
         };
 
     }
