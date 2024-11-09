@@ -26,15 +26,6 @@ class MifloraCard extends HTMLElement {
                 return `${icon}-${Math.round((state / 10) - 0.01) * 10}`;
             }
         }
-        if (sensor === 'signal') {
-            if (state >= -50) {
-                return `hass:signal-cellular-3`;
-            } else if (state >= -70) {
-                return `hass:signal-cellular-2`;
-            } else {
-                return `hass:signal-cellular-1`;
-            }
-        }
         return icon;
     }
 
