@@ -12,7 +12,7 @@ class MifloraCard extends HTMLElement {
             intensity: 'hass:white-balance-sunny',
             conductivity: 'hass:emoticon-poop',
             battery: 'hass:battery',
-            signal: 'hass:signal-cellular'
+            signal: 'hass:signal'
         };
 
     }
@@ -28,11 +28,11 @@ class MifloraCard extends HTMLElement {
         }
         if (sensor === 'signal') {
             if (state >= -50) {
-                return `${icon}-3`;
+                return `hass:signal-cellular-3`;
             } else if (state >= -70) {
-                return `${icon}-2`;
+                return `hass:signal-cellular-2`;
             } else {
-                return `${icon}-1`;
+                return `hass:signal-cellular-1`;
             }
         }
         return icon;
